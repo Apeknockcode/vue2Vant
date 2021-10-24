@@ -15,7 +15,7 @@ export default {
     HelloWorld,
   },
   mounted() {
-    console.log(this.$api)
+    console.log(this.$api);
   },
 };
 </script>
