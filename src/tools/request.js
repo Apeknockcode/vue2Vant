@@ -69,28 +69,29 @@ axios.interceptors.response.use(
 );
 
 // 封装 get 和 post 方法
-export function get(url, params) {
-  return new Promise((resolve, reject) => {
-    axios
-      .get(url, { params: params })
-      .then((res) => {
-        resolve(res.data);
-      })
-      .catch((error) => {
-        reject(error.data);
-      });
-  });
-}
-
-export function post(url, params) {
-  return new Promise((resolve, reject) => {
-    axios
-      .post(url, QS.stringify(params))
-      .then((res) => {
-        resolve(res.data);
-      })
-      .catch((error) => {
-        reject(error.data);
-      });
-  });
-}
+export default {
+  get: function (url, params) {
+    return new Promise((resolve, reject) => {
+      axios
+        .get(url, { params: params })
+        .then((res) => {
+          resolve(res.data);
+        })
+        .catch((error) => {
+          reject(error.data);
+        });
+    });
+  },
+  post(url, params) {
+    return new Promise((resolve, reject) => {
+      axios
+        .post(url, QS.stringify(params))
+        .then((res) => {
+          resolve(res.data);
+        })
+        .catch((error) => {
+          reject(error.data);
+        });
+    });
+  },
+};
