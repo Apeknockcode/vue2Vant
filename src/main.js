@@ -3,7 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import api from "./tools/index"; //引入接口文件
-
+import "amfe-flexible";
 Vue.prototype.$api = api;
 
 Vue.config.productionTip = false;
